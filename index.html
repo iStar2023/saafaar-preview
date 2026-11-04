@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Discover the initial hero before the React bundle, on the homepage only.
+      (() => {
+        const base = '/';
+        if (location.pathname.replace(/\/$/, '') !== base.replace(/\/$/, '')) return;
+        const image = document.createElement('link');
+        image.rel = 'preload';
+        image.as = 'image';
+        image.href = `${base}images/hero.webp`;
+        image.imageSrcset = `${base}images/hero-sm.webp 800w, ${base}images/hero.webp 1920w`;
+        image.imageSizes = '100vw';
+        image.fetchPriority = 'high';
+        document.head.append(image);
+      })();
+    </script>
     <title>Saafaar — Owner Review Prototype</title>
     <meta name="description" content="Owner-review prototype of a Saafaar redesign. Sample listings, illustrative imagery. Not a live site." />
     <meta name="robots" content="noindex, nofollow, noarchive" />
@@ -16,8 +31,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Figtree:wght@400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <script type="module" crossorigin src="/assets/index-DsHcmxVk.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-ByazWRGd.css">
+    <script type="module" crossorigin src="/assets/index-s_Az1lx_.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-g5qh1G07.css">
   </head>
   <body>
     <div id="root"></div>
